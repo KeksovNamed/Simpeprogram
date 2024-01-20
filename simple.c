@@ -20,15 +20,15 @@ int main()
 	int lengthnumbers = length(summa);
 	int final = 0;
 	int one=1;
-    int tmpfinal = 0;
-    int count1=0;
-    int newfinal=0;
-    for (count1; count1 < lengthnumbers; ++count1)
-    {
-        final = summa / one % 10;
-        newfinal = newfinal + final;
-        one = one * 10;
-    }
-    printf("Число, получающимся при записи его цифр в обратном порядке =%d",newfinal);
+	int tmpfinal = 0;
+	int count1=0;
+	int newfinal=0;
+	for (count1; count1 < lengthnumbers; ++count1)
+	{
+		final = summa / one % 10;
+		newfinal = newfinal + final;
+		one = one * 10;
+	}
+	printf("Число, получающимся при записи его цифр в обратном порядке =%d",newfinal);
 	return 0;
 }
