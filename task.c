@@ -6,40 +6,27 @@
 
 int main()
 {
-	int wholepart,fractional;
-	float number;
-	printf("Введите число\n");
-	scanf("%g",&number);
-	printf("Вы ввели %g\n",number);
-	int integer=number;
-	float remaindernum=number-integer;
-	int ten=10;
-	int zero=0;
-	int numberstozero=1;
-	for(; remaindernum/1<100;)
-	{
-		remaindernum=remaindernum*ten;
-		numberstozero++;
-	}
-	float nearestinteger=roundf(remaindernum);
-	if(nearestinteger<remaindernum)
-	{
-		remaindernum=remaindernum*ten;
-		numberstozero++;
-	}
-	printf("Остаток целое =%g\n",remaindernum);
-	wholepart=integer;
-	fractional=remaindernum;
+	int wholepart,fractional,number;
+	int fraction;
+	printf("Введите число.дробную часть\n");
+	scanf("%d.%d",&number,&fraction);
+	printf("Вы ввели %d %d\n",number,fraction);
+
+	printf("Остаток целое =%d\n",fraction);
+	wholepart=number;
+	fractional=fraction;
 	int length(int n)   //код взят из гугла
 	{
 		int l = 1;
 		for (; n = n /10; ++l);
 		return l;
 	}
-	int lengthnumbers = length(fractional);//дальше мой
+	int lengthnumbers = length(fraction);;//дальше мой
+	int numberstozero=lengthnumbers;
 	printf("Длина дробной части =%d\n",numberstozero);
 	int result=10;
 	int flag=0;
+	int ten=10;
 	for (int i = 0; i < lengthnumbers; i++)
 	{
 
