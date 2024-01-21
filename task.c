@@ -1,3 +1,4 @@
+//Программа превращает число в дробь v1.1 by Keksovname
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
@@ -8,10 +9,10 @@ int main()
 	int wholepart,fractional;
 	double number;
 	printf("Введите число\n");
-	scanf("%Lf",&number);//теперь тут 5.0032
+	scanf("%Lf",&number);
 	printf("Вы ввели %Lf\n",number);
-	int integer=number;//теперь тут 5
-	double remaindernum=number-integer;//теперь тут 0.0032
+	int integer=number;
+	double remaindernum=number-integer;
 	int ten=10;
 	int zero=0;
 	int numberstozero=0;
