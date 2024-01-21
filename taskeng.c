@@ -1,4 +1,4 @@
-//The program converts a number to a fraction v1.2 from Keksovname
+//The program turns a number into a fraction v1.3 by Keksovname
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
@@ -8,7 +8,7 @@ int main()
 {
 	int wholepart,fractional,number;
 	int fraction;
-	printf("Вenter the number.fractional part\n");
+	printf("Enter the number.fractional part\n");
 	scanf("%d.%d",&number,&fraction);
 	printf("You entered %d %d\n",number,fraction);
 
@@ -48,6 +48,19 @@ int main()
 	double biglengthnumbers=numberstozero;
 	double bigdenominator=pow(10,numberstozero);
 	int denominator=bigdenominator;
+	printf("Enter the number of leading zeros before number(0) if there are none\n");
+	int leadingzeros=0;
+	scanf("%d",&leadingzeros);
+	if(leadingzeros==0)
+	{
+	}
+	if(leadingzeros>=1)
+	{
+		double bigleadingzero=leadingzeros;
+		double bigtemplead=pow(10,bigleadingzero);
+		leadingzeros=bigtemplead;
+		denominator=denominator*leadingzeros;
+	}
 	printf("The denominator is ready and it is equal to %d\n",denominator);
 	printf("The fraction is equal to %d/%d\n",result,denominator);
 	int gcd(int a, int b)	//Euclidean algorithm
