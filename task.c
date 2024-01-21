@@ -1,4 +1,4 @@
-//Программа превращает число в дробь v1.2 by Keksovname
+//Программа превращает число в дробь v1.3 by Keksovname
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
@@ -48,6 +48,19 @@ int main()
 	double biglengthnumbers=numberstozero;
 	double bigdenominator=pow(10,numberstozero);
 	int denominator=bigdenominator;
+	printf("Введите количество незначащих нулей перед число(0) если таких нету\n");
+	int leadingzeros=0;
+	scanf("%d",&leadingzeros);
+	if(leadingzeros==0)
+	{
+	}
+	if(leadingzeros>=1)
+	{
+		double bigleadingzero=leadingzeros;
+		double bigtemplead=pow(10,bigleadingzero);
+		leadingzeros=bigtemplead;
+		denominator=denominator*leadingzeros;
+	}
 	printf("Знаменатель готов и он равен %d\n",denominator);
 	printf("Дробь равна %d/%d\n",result,denominator);
 	int gcd(int a, int b)	//алгоритм Евклида
