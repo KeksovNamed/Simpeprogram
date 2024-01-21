@@ -15,7 +15,7 @@ int main()
 		for (; n = n /10; ++l);
 		return l;
 	}
-	int lengthnumbers = length(fractional);
+	int lengthnumbers = length(fractional);//дальшой мой
 	printf("Длина дробной части =%d\n",lengthnumbers);
 	int result=10;
 	int ten=10;
