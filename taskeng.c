@@ -22,7 +22,7 @@ int main()
 		numberstozero++;
 	}
 	double temprem=remaindernum;
-	temprem=temprem/0;
+	temprem=temprem/1;
 	if(temprem=!0)
 	{
 		remaindernum=remaindernum*ten;
