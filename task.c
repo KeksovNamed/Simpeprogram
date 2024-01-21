@@ -1,4 +1,4 @@
-//Программа превращает число в дробь v1.1 by Keksovname
+//Программа превращает число в дробь v1.2 by Keksovname
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
@@ -7,23 +7,22 @@
 int main()
 {
 	int wholepart,fractional;
-	double number;
+	float number;
 	printf("Введите число\n");
-	scanf("%Lf",&number);
-	printf("Вы ввели %Lf\n",number);
+	scanf("%g",&number);
+	printf("Вы ввели %g\n",number);
 	int integer=number;
-	double remaindernum=number-integer;
+	float remaindernum=number-integer;
 	int ten=10;
 	int zero=0;
-	int numberstozero=0;
-	for(; remaindernum/1<10;)
+	int numberstozero=1;
+	for(; remaindernum/1<100;)
 	{
 		remaindernum=remaindernum*ten;
 		numberstozero++;
 	}
-	double temprem=remaindernum;
-	temprem=temprem/1;
-	if(temprem=!0)
+	float nearestinteger=roundf(remaindernum);
+	if(nearestinteger<remaindernum)
 	{
 		remaindernum=remaindernum*ten;
 		numberstozero++;
