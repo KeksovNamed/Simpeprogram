@@ -1,4 +1,4 @@
-//The program turns a number into a fraction by KeksovName v1.1
+//The program converts a number to a fraction v1.2 from Keksovname
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
@@ -6,41 +6,27 @@
 
 int main()
 {
-	int wholepart,fractional;
-	double number;
-	printf("Enter the number\n");
-	scanf("%Lf",&number);
-	printf("You entered %Lf\n",number);
-	int integer=number;
-	double remaindernum=number-integer;
-	int ten=10;
-	int zero=0;
-	int numberstozero=0;
-	for(; remaindernum/1<10;)
-	{
-		remaindernum=remaindernum*ten;
-		numberstozero++;
-	}
-	double temprem=remaindernum;
-	temprem=temprem/1;
-	if(temprem=!0)
-	{
-		remaindernum=remaindernum*ten;
-		numberstozero++;
-	}
-	printf("Remainder whole =%g\n",remaindernum);
-	wholepart=integer;
-	fractional=remaindernum;
+	int wholepart,fractional,number;
+	int fraction;
+	printf("Вenter the number.fractional part\n");
+	scanf("%d.%d",&number,&fraction);
+	printf("You entered %d %d\n",number,fraction);
+
+	printf("Remainder whole =%d\n",fraction);
+	wholepart=number;
+	fractional=fraction;
 	int length(int n)   //code taken from Google
 	{
 		int l = 1;
 		for (; n = n /10; ++l);
 		return l;
 	}
-	int lengthnumbers = length(fractional);//next is mine
+	int lengthnumbers = length(fraction);;//next is mine
+	int numberstozero=lengthnumbers;
 	printf("Fractional length =%d\n",numberstozero);
 	int result=10;
 	int flag=0;
+	int ten=10;
 	for (int i = 0; i < lengthnumbers; i++)
 	{
 
@@ -63,7 +49,7 @@ int main()
 	double bigdenominator=pow(10,numberstozero);
 	int denominator=bigdenominator;
 	printf("The denominator is ready and it is equal to %d\n",denominator);
-	printf("Дробь равна %d/%d\n",result,denominator);
+	printf("The fraction is equal to %d/%d\n",result,denominator);
 	int gcd(int a, int b)	//Euclidean algorithm
 	{
 		int c;
