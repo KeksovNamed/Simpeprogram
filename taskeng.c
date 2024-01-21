@@ -1,3 +1,4 @@
+//The program turns a number into a fraction by KeksovName v1.1
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
@@ -6,9 +7,30 @@
 int main()
 {
 	int wholepart,fractional;
-	printf("Enter the whole part and the fractional part (for example 5 200)\n");
-	scanf("%d %d",&wholepart,&fractional);
-	printf("You entered %d %d\n",wholepart,fractional);
+	double number;
+	printf("Enter the number\n");
+	scanf("%Lf",&number);
+	printf("You entered %Lf\n",number);
+	int integer=number;
+	double remaindernum=number-integer;
+	int ten=10;
+	int zero=0;
+	int numberstozero=0;
+	for(; remaindernum/1<10;)
+	{
+		remaindernum=remaindernum*ten;
+		numberstozero++;
+	}
+	double temprem=remaindernum;
+	temprem=temprem/0;
+	if(temprem=!0)
+	{
+		remaindernum=remaindernum*ten;
+		numberstozero++;
+	}
+	printf("Remainder whole =%g\n",remaindernum);
+	wholepart=integer;
+	fractional=remaindernum;
 	int length(int n)   //code taken from Google
 	{
 		int l = 1;
@@ -16,9 +38,8 @@ int main()
 		return l;
 	}
 	int lengthnumbers = length(fractional);//next is mine
-	printf("Fractional length =%d\n",lengthnumbers);
+	printf("Fractional length =%d\n",numberstozero);
 	int result=10;
-	int ten=10;
 	int flag=0;
 	for (int i = 0; i < lengthnumbers; i++)
 	{
@@ -38,11 +59,11 @@ int main()
 	}
 	result=result+fractional;
 	printf("The numerator is ready and it is equal to %d\n",result);
-	double biglengthnumbers=lengthnumbers;
-	double bigdenominator=pow(10,lengthnumbers);
+	double biglengthnumbers=numberstozero;
+	double bigdenominator=pow(10,numberstozero);
 	int denominator=bigdenominator;
 	printf("The denominator is ready and it is equal to %d\n",denominator);
-	printf("The fraction is equal to %d/%d\n",result,denominator);
+	printf("Дробь равна %d/%d\n",result,denominator);
 	int gcd(int a, int b)	//Euclidean algorithm
 	{
 		int c;
@@ -56,7 +77,7 @@ int main()
 		return a;
 	}
 	int i = gcd(result,denominator);	//Euclidean algorithm, find the total number for division.
-	printf("Total divisible number=%d\n", i);	//What is the number for dividing the numerator and denominator?
+	printf("Total divisible number=%d\n", i);	//what is the number to make the numerator and denominator.
 	if(i>0)
 	{
 		result=result/i;	//divide the numerator by the total number for division
