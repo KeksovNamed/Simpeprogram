@@ -43,7 +43,7 @@ int main() {
 	double biglengthnumbers=numberstozero;
 	double bigdenominator=pow(10,numberstozero);
 	int denominator=bigdenominator;
-	printf("Введите количество незначащих нулей перед число(0) если таких нету\n");
+	printf("Введите количество незначащих нулей перед числом(0) если таких нету\n");
 	int leadingzeros=0;
 	scanf("%d",&leadingzeros);
 	if(leadingzeros==0) {
