@@ -4,7 +4,7 @@
 #include <conio.h>
 
 int main() {
-	int hour,minute,seconds;
+	int seconds;
 	printf("Введите время в секундах\n");
 	scanf("%d",&seconds);
 	printf("Вы ввели %d\n",seconds);
@@ -13,8 +13,6 @@ int main() {
 	int wholeminute=remainderhour/60;
 	int remainderminute=remainderhour%60;
 	seconds=remainderminute;
-	printf("Часов полных =%d остаток %d\n",wholehour,remainderhour);
-	printf("Минут =%d\n",wholeminute);
-	printf("Полное время равно %d:%d:%d",wholehour,wholeminute,seconds);
+	printf("Часов =%d:минут =%d:секунд %d\n",wholehour,wholeminute,seconds);
 	return 0;
 }
