@@ -1,0 +1,51 @@
+//Temporary 
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include<math.h>
+
+int main() {
+	int wholepart,fractional,i;
+	int fraction;
+	float number;
+	printf("Введите число\n");
+	scanf("%g",&number);
+	printf("Вы ввели %g\n",number);
+	int tempwhole=number;
+	printf("Остаток целое =%d\n",tempwhole);
+	float tempremainder=number-tempwhole;
+	printf("Остаток = %g\n",tempremainder);
+	char array[30];
+	sprintf(array, "%f", tempremainder);
+	int size = sizeof(array-1) / sizeof(array[0]);
+	for(int i = 0; i < size; i++) {
+		void* address = array + i;  // получаем адрес i-го элемента массива
+		int value = *(array + i);   // получаем значение i-го элемента массива
+		printf("array[%d]: address=%p \t value=%d \n", i, address, value);
+	}
+// удаление из массива array элементов равных value
+int RemoveValues(char *array, int n, int value) {
+    for (int i = n - 1; i >= 0; i--) {
+        if (array[i] == value) { // если нужно удалить элемент
+            n--; // уменьшаем размер массива
+            // сдвигаем элементы правее i влево
+            for (int j = i; j < n; j++) {
+                array[j] = array[j + 1];
+            }
+        }
+    }
+    return n;
+}
+int tempsize=RemoveValues(array,size,48);
+printf("size=%d\n",tempsize);
+int tempsize2=tempsize;
+tempsize2=RemoveValues(array,tempsize,46);
+printf("size=%d\n",tempsize2);
+
+	for(int i = 0; i < tempsize2; i++) {
+		void* address = array + i;  // получаем адрес i-го элемента массива
+		int value = *(array + i);   // получаем значение i-го элемента массива
+		printf("array[%d]: address=%p \t value=%d \n", i, address, value);
+	}
+	return 0;
+}
